@@ -1,17 +1,6 @@
 <template>
   <v-app dark>
-    <v-toolbar>
-      <v-toolbar-title v-text="title" />
-      <v-tabs
-        align-with-title
-      >
-        <v-spacer />
-        <v-tab>Главная</v-tab>
-        <v-tab>Магазин</v-tab>
-        <v-tab>Ковка на заказ</v-tab>
-        <v-tab>Контакты</v-tab>
-      </v-tabs>
-    </v-toolbar>
+    <Header />
     <v-content>
       <v-container>
         <nuxt />
@@ -27,7 +16,13 @@
 </template>
 
 <script>
+import Header from '../components/Header'
+
 export default {
+
+  components: {
+    Header
+  },
   data () {
     return {
       clipped: false,
