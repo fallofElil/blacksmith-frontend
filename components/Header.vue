@@ -18,7 +18,11 @@
                 Магазин
               </NuxtLink>
             </v-tab>
-            <v-tab>Ковка на заказ</v-tab>
+            <v-tab>
+              <NuxtLink to="custom-order" class="link">
+                Ковка на заказ
+              </NuxtLink>
+            </v-tab>
             <v-tab>Контакты</v-tab>
           </v-tabs>
           <v-btn icon>
