@@ -3,8 +3,8 @@
     <v-row>
       <p>Страница магазина</p>
     </v-row>
-    <v-row v-for="product in products" :key="product.id">
-      <ShopItem :product="product" />
+    <v-row>
+      <ShopItem v-for="product in products" :product="product" :key="product.id" />
     </v-row>
   </v-container>
 </template>

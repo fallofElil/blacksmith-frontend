@@ -4,11 +4,11 @@
     sm8
     md6
   >
-    <v-btn @click="open = !open">
+    <v-btn @click="setModalOpen">
       Хочу модалку
     </v-btn>
 
-    <Checkout :open="open" />
+    <Checkout />
   </v-flex>
 </template>
 
@@ -18,9 +18,9 @@ import Checkout from '../components/modal/Checkout'
 export default {
   name: 'Index',
   components: { Checkout },
-  data () {
-    return {
-      open: false
+  methods: {
+    setModalOpen () {
+      this.$store.commit('showCheckoutModal', true)
     }
   }
 }

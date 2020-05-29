@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark class="app-container">
     <Header />
     <v-content>
       <v-container>
@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-container {
+  background-color: #7f8688;
+}
+</style>

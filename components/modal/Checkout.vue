@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="open" max-width="35vw">
+  <v-dialog v-model="modalOpen" dark max-width="35vw" @click:outside="setModalOpen(false)">
     <v-card-title>Список приобретаемых товаров</v-card-title>
     <v-list v-for="product in productsInCart" :key="product.id">
       <v-list-item>
@@ -22,19 +22,21 @@
 export default {
   name: 'Checkout',
 
-  props: {
-    open: Boolean
-  },
-
   computed: {
     productsInCart () {
       return this.$store.getters.productsAdded
+    },
+    modalOpen () {
+      return this.$store.getters.isCheckoutModalOpen
     }
   },
 
   methods: {
     removeFromCart (id) {
       this.$store.commit('removeFromCart', id)
+    },
+    setModalOpen (show) {
+      this.$store.commit('showCheckoutModal', show)
     }
   }
 }

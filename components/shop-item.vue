@@ -1,19 +1,26 @@
 <template>
-  <v-card
-    class="product"
-    max-width="400"
-  >
-    <v-img
-      src="/external-content.duckduckgo.com.jpeg"
-      height="200px"
-    />
-    <v-card-title>{{ product.name }}</v-card-title>
-    <v-card-subtitle>{{ product.description }}</v-card-subtitle>
-    <v-card-actions>
-      <v-btn @click="addToCart(product.id)">В корзину</v-btn>
-      <v-btn>Подробнее</v-btn>
-    </v-card-actions>
-  </v-card>
+  <v-hover>
+    <template v-slot="{ hover }">
+      <v-card
+        :elevation="hover ? 24 : 6"
+        class="product"
+        max-width="400"
+      >
+        <v-img
+          src="/external-content.duckduckgo.com.jpeg"
+          height="200px"
+        />
+        <v-card-title>{{ product.name }}</v-card-title>
+        <v-card-subtitle>{{ product.description }}</v-card-subtitle>
+        <v-card-actions>
+          <v-btn class="btn-add" @click="addToCart(product.id)">
+            В корзину
+          </v-btn>
+          <v-btn>Подробнее</v-btn>
+        </v-card-actions>
+      </v-card>
+    </template>
+  </v-hover>
 </template>
 
 <script>
@@ -33,7 +40,19 @@ export default {
 
 <style scoped>
 .product {
+  position: relative;
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
+  .btn-add {
+    z-index: 2;
+  }
+  .details-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 </style>

@@ -40,13 +40,13 @@ export const getters = {
     return state.userInfo.name
   },
   isLoginModalOpen: (state) => {
-    return state.systemInfo.openLoginModal
+    return state.appInfo.openLoginModal
   },
   isSignupModalOpen: (state) => {
-    return state.systemInfo.openSignupModal
+    return state.appInfo.openSignupModal
   },
   isCheckoutModalOpen: (state) => {
-    return state.systemInfo.openCheckoutModal
+    return state.appInfo.openCheckoutModal
   },
   quantity: (state) => {
     return state.products.quantity
@@ -96,13 +96,13 @@ export const mutations = {
     state.userInfo.productTitleSearched = titleSearched
   },
   showLoginModal: (state, show) => {
-    state.systemInfo.openLoginModal = show
+    state.appInfo.openLoginModal = show
   },
   showSignupModal: (state, show) => {
-    state.systemInfo.openSignupModal = show
+    state.appInfo.openSignupModal = show
   },
   showCheckoutModal: (state, show) => {
-    state.systemInfo.openCheckoutModal = show
+    state.appInfo.openCheckoutModal = show
   },
   addToFavourite: (state, id) => {
     state.products.forEach((el) => {
