@@ -3,13 +3,10 @@
     <v-row>
       <p>Страница магазина</p>
     </v-row>
-    <v-row>
-      <v-col>
-        <ShopItem title="Изделие №1" sub-title="Обычное кованное изделие" />
-      </v-col>
-      <v-col>
-        <ShopItem title="Изделие №2" sub-title="Обычное кованное изделие" />
-      </v-col>
+    <v-row v-for="product in products" :key="product.id">
+      <ShopItem :product="product"/>
+<!--      <ShopItem title="Изделие №1" sub-title="Обычное кованное изделие" />-->
+<!--      <ShopItem title="Изделие №2" sub-title="Обычное кованное изделие" />-->
     </v-row>
   </v-container>
 </template>
@@ -21,6 +18,12 @@ export default {
   name: 'Shop',
   components: {
     ShopItem
+  },
+
+  computed: {
+    products () {
+      return this.$store.state.products
+    }
   }
 }
 </script>

@@ -1,15 +1,16 @@
 <template>
   <v-card
+    class="product"
     max-width="400"
   >
     <v-img
       src="/external-content.duckduckgo.com.jpeg"
       height="200px"
-    ></v-img>
-    <v-card-title>{{ title }}</v-card-title>
-    <v-card-subtitle>{{ subTitle }}</v-card-subtitle>
+    />
+    <v-card-title>{{ product.name }}</v-card-title>
+    <v-card-subtitle>{{ product.description }}</v-card-subtitle>
     <v-card-actions>
-      <v-btn>Купить</v-btn>
+      <v-btn @click="addToCart(product.id)">В корзину</v-btn>
       <v-btn>Подробнее</v-btn>
     </v-card-actions>
   </v-card>
@@ -18,13 +19,21 @@
 <script>
 export default {
   name: 'ShopItem',
-  props: {
-    title: String,
-    subTitle: String
+  props: ['product'],
+  methods: {
+    addToCart (id) {
+      this.$store.commit('addToCart', id)
+    },
+    removeFromCart (id) {
+      this.$store.commit('removeFromCart', id)
+    }
   }
 }
 </script>
 
 <style scoped>
-
+.product {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
 </style>

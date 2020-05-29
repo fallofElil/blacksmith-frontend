@@ -3,24 +3,24 @@
     <v-row>
       <v-col>
         <v-toolbar short dark>
-          <v-toolbar-title v-text="title" />
+          <v-toolbar-title :v-text="title" />
           <v-tabs
             align-with-title
           >
             <v-spacer />
             <v-tab>
               <NuxtLink to="/" class="link">
-                Главная
+                <span>Главная</span>
               </NuxtLink>
             </v-tab>
             <v-tab>
               <NuxtLink to="/shop" class="link">
-                Магазин
+                <span>Магазин</span>
               </NuxtLink>
             </v-tab>
             <v-tab>
               <NuxtLink to="custom-order" class="link">
-                Ковка на заказ
+                <span>Ковка на заказ</span>
               </NuxtLink>
             </v-tab>
             <v-tab>Контакты</v-tab>
@@ -28,7 +28,7 @@
           <v-btn icon>
             <v-badge
               color="orange"
-              content="0"
+              :content="numProductsAdded"
             >
               <v-icon>mdi-cart</v-icon>
             </v-badge>
@@ -41,13 +41,29 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+
+  data: () => {
+    return {
+      title: 'BLACKSMITH STORE'
+    }
+  },
+
+  computed: {
+    numProductsAdded () {
+      return this.$store.getters.productsAdded.length
+    }
+  }
 }
 </script>
 
 <style scoped>
 .link {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   outline: none;
   text-decoration: none;
 }

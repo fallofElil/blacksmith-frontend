@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sdfsdf1",
+    "name": "Нож стальной",
+    "description": "Обыкновенный стальной нож для кухни",
+    "price": 100,
+    "isAddedToCart": false
+  },
+  {
+    "id": "sdfsdf2",
+    "name": "Нож выкидной",
+    "description": "Компактный выкидной нож",
+    "price": 300,
+    "isAddedToCart": false
+  },
+  {
+    "id": "sdfsdf3",
+    "name": "Нож стальной",
+    "description": "Обыкновенный стальной нож для кухни",
+    "price": 200,
+    "isAddedToCart": false
+  },
+  {
+    "id": "sdfsdf4",
+    "name": "Нож стальной",
+    "description": "Обыкновенный стальной нож для кухни",
+    "price": 400,
+    "isAddedToCart": false
+  }
+]
