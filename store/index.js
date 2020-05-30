@@ -43,7 +43,7 @@ export const getters = {
     return state.appInfo.openLoginModal
   },
   isSignupModalOpen: (state) => {
-    return state.appInfo.openSignupModal
+    return state.appInfo.openSignUpModal
   },
   isCheckoutModalOpen: (state) => {
     return state.appInfo.openCheckoutModal
@@ -99,7 +99,7 @@ export const mutations = {
     state.appInfo.openLoginModal = show
   },
   showSignupModal: (state, show) => {
-    state.appInfo.openSignupModal = show
+    state.appInfo.openSignUpModal = show
   },
   showCheckoutModal: (state, show) => {
     state.appInfo.openCheckoutModal = show

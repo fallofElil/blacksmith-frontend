@@ -7,16 +7,22 @@
           <v-text-field
             v-model="email"
             :counter="50"
+            name="email"
             label="Email"
+            prepend-icon="mdi-email"
+            class="mb-4"
             required
           />
           <v-text-field
             v-model="email"
             :counter="50"
+            name="password"
             label="Пароль"
+            prepend-icon="mdi-key"
+            class="mb-4"
             required
           />
-          <v-btn color="primary" class="btn-submit">
+          <v-btn color="primary" class="btn-submit d-flex mx-auto">
             Войти
           </v-btn>
         </v-form>

@@ -57,7 +57,7 @@
                 <span>Войти</span>
               </v-list-item-title>
             </v-list-item>
-            <v-list-item>
+            <v-list-item @click="setSignUpOpen(true)">
               <v-list-item-title>
                 <v-icon class="acc-icon">
                   mdi-account-plus
@@ -71,16 +71,18 @@
     </v-toolbar>
     <Checkout />
     <Login />
+    <Registration />
   </v-container>
 </template>
 
 <script>
 import Checkout from './modal/Checkout'
 import Login from './modal/Login'
+import Registration from './modal/Registration'
 
 export default {
   name: 'Header',
-  components: { Login, Checkout },
+  components: { Registration, Login, Checkout },
   data: () => {
     return {
       title: 'BLACKSMITH STORE'
@@ -99,6 +101,9 @@ export default {
     },
     setLoginOpen (show) {
       this.$store.commit('showLoginModal', show)
+    },
+    setSignUpOpen (show) {
+      this.$store.commit('showSignupModal', show)
     }
   }
 }
