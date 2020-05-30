@@ -4,7 +4,7 @@
       <v-card
         :elevation="hover ? 24 : 6"
         class="product"
-        max-width="400"
+        max-width="360"
       >
         <v-img
           src="/external-content.duckduckgo.com.jpeg"
@@ -41,18 +41,17 @@ export default {
 <style scoped>
 .product {
   position: relative;
-  margin-right: 2rem;
   margin-bottom: 2rem;
 }
-  .btn-add {
-    z-index: 2;
-  }
-  .details-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
+.btn-add {
+  z-index: 2;
+}
+.details-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 </style>

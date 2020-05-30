@@ -1,12 +1,13 @@
 <template>
   <v-container>
-    <v-row justify="center">
-      <v-col cols="6">
+    <v-card class="mx-auto col-8">
+      <v-card-title>Форма индивидуального заказа</v-card-title>
+      <v-card-text>
         <v-form>
           <v-text-field
             v-model="name"
-            :counter="30"
-            label="Имя"
+            :counter="60"
+            label="ФИО"
             required
           />
           <v-text-field
@@ -23,7 +24,7 @@
             required
           />
           <div class="descr-wrapper">
-            <v-icon class="descr-icon" dark="true">
+            <v-icon class="descr-icon">
               mdi-information
             </v-icon>
             <p class="descr-txt">
@@ -35,31 +36,32 @@
             name="input-7-4"
             label="Форма описания изделия"
           />
-          <v-btn class="btn-submit" @click="submit">
+          <v-btn color="primary" class="btn-submit">
             Отправить
           </v-btn>
-          <v-btn @click="clear">
+          <v-btn class="btn-clear">
             Очистить
           </v-btn>
         </v-form>
-      </v-col>
-    </v-row>
+      </v-card-text>
+    </v-card>
   </v-container>
 </template>
 
 <script>
 export default {
   name: 'CustomOrder',
-  data: () => {
-    return {
-      materials: [
-        'сталь', 'железо', 'чугун', 'медь', 'бронза', 'латунь', 'смешанный'
-      ],
-      description: 'Введите описание в свободном формате в форме ниже. ' +
+  data: () => ({
+    name: '',
+    email: '',
+    select: '',
+    materials: [
+      'сталь', 'железо', 'чугун', 'медь', 'бронза', 'латунь', 'смешанный'
+    ],
+    description: 'Введите описание в свободном формате в форме ниже. ' +
       'Укажите все необходимые пожелания, а также техническую информацию, ' +
       'необходимую для мастера.'
-    }
-  }
+  })
 }
 </script>
 
@@ -82,5 +84,9 @@ export default {
 }
 .btn-submit {
   margin-right: .5rem;
+}
+.btn-clear {
+  background-color: #bbbbbb !important;
+  color: rgba(0,0,0,.87);
 }
 </style>

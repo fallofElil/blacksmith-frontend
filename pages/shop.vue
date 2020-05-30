@@ -3,7 +3,7 @@
     <v-row>
       <p>Страница магазина</p>
     </v-row>
-    <v-row>
+    <v-row class="justify-space-between">
       <ShopItem v-for="product in products" :product="product" :key="product.id" />
     </v-row>
   </v-container>
