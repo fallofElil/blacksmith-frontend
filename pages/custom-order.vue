@@ -3,17 +3,22 @@
     <v-card class="mx-auto col-8">
       <v-card-title>Форма индивидуального заказа</v-card-title>
       <v-card-text>
-        <v-form>
+        <v-form ref="customOrderRef">
           <v-text-field
             v-model="name"
             :counter="60"
             label="ФИО"
+            prepend-icon="mdi-account"
+            class="mb-4"
             required
           />
           <v-text-field
             v-model="email"
+            type="email"
             :counter="50"
             label="Email"
+            prepend-icon="mdi-email"
+            class="mb-4"
             required
           />
           <v-select
@@ -21,9 +26,11 @@
             :items="materials"
             :rules="[v => !!v || 'Выберете материал']"
             label="Материал изделия"
+            prepend-icon="mdi-hexagon-slice-3"
+            class="mb-4"
             required
           />
-          <div class="descr-wrapper">
+          <div class="descr-wrapper mb-4">
             <v-icon class="descr-icon">
               mdi-information
             </v-icon>
@@ -39,7 +46,7 @@
           <v-btn color="primary" class="btn-submit">
             Отправить
           </v-btn>
-          <v-btn class="btn-clear">
+          <v-btn class="btn-clear" @click="reset">
             Очистить
           </v-btn>
         </v-form>
@@ -61,7 +68,13 @@ export default {
     description: 'Введите описание в свободном формате в форме ниже. ' +
       'Укажите все необходимые пожелания, а также техническую информацию, ' +
       'необходимую для мастера.'
-  })
+  }),
+
+  methods: {
+    reset () {
+      this.$refs.customOrderRef.reset()
+    }
+  }
 }
 </script>
 
