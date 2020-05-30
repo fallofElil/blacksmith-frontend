@@ -1,12 +1,12 @@
 <template>
   <v-app dark class="app-container">
     <Header />
-    <v-content>
+    <v-content class="pa-0">
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <Footer :fixed="fixed" />
+    <Footer />
   </v-app>
 </template>
 
@@ -24,7 +24,6 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
       miniVariant: false,
       right: true,
       rightDrawer: false,

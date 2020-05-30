@@ -1,8 +1,5 @@
 <template>
-  <v-footer
-    :fixed="fixed"
-    app
-  >
+  <v-footer class="app-footer" app>
     <v-container>
       <v-row>
         <p class="copyrigth">
@@ -29,14 +26,14 @@
 
 <script>
 export default {
-  name: 'Footer',
-  props: {
-    fixed: Boolean
-  }
+  name: 'Footer'
 }
 </script>
 
 <style scoped>
+.app-footer {
+  position: relative;
+}
 .copyrigth {
   display: flex;
   flex-direction: column;

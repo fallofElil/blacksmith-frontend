@@ -12,12 +12,14 @@
         />
         <v-card-title>{{ product.name }}</v-card-title>
         <v-card-subtitle>{{ product.description }}</v-card-subtitle>
-        <v-card-actions>
-          <v-btn class="btn-add" @click="addToCart(product.id)">
+        <v-card-text>Цена: <span class="price">{{ product.price }} &#8381;</span></v-card-text>
+        <v-card-actions class="mx-2 mb-2">
+          <v-btn color="primary" class="btn-add" @click="addToCart(product.id)">
             В корзину
           </v-btn>
-          <v-btn>Подробнее</v-btn>
+          <v-btn class="btn-clear">Подробнее</v-btn>
         </v-card-actions>
+        <NuxtLink class="details-link" :to="{ name: 'product_detail-id' }" />
       </v-card>
     </template>
   </v-hover>
@@ -44,7 +46,15 @@ export default {
   margin-bottom: 2rem;
 }
 .btn-add {
+  margin-right: .75rem;
   z-index: 2;
+}
+.price {
+  color: #fff;
+}
+.btn-clear {
+  background-color: #bbbbbb !important;
+  color: rgba(0,0,0,.87);
 }
 .details-link {
   position: absolute;
