@@ -19,16 +19,20 @@
           </NuxtLink>
         </v-tab>
         <v-tab>
-          <NuxtLink to="/shop" class="link">
+          <NuxtLink to="Shop" class="link">
             <span>Магазин</span>
           </NuxtLink>
         </v-tab>
         <v-tab>
-          <NuxtLink to="custom-order" class="link">
+          <NuxtLink to="CustomOrder" class="link">
             <span>Ковка на заказ</span>
           </NuxtLink>
         </v-tab>
-        <v-tab>Контакты</v-tab>
+        <v-tab>
+          <NuxtLink to="Contacts" class="link">
+            <span>Контакты</span>
+          </NuxtLink>
+        </v-tab>
       </v-tabs>
       <v-btn class="btn-cart" icon @click="setModalOpen(true)">
         <v-badge
