@@ -7,7 +7,7 @@
         max-width="360"
       >
         <v-img
-          src="/external-content.duckduckgo.com.jpeg"
+          :src="getBase64(product.prodImage)"
           height="200px"
         />
         <v-card-title>{{ product.name }}</v-card-title>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { arrayBufferToBase64 } from '../helpers/img-base64'
+
 export default {
   name: 'ShopItem',
   props: ['product'],
@@ -35,6 +37,9 @@ export default {
     },
     removeFromCart (id) {
       this.$store.commit('removeFromCart', id)
+    },
+    getBase64 (prodImage) {
+      return `data:${prodImage.contentType};base64,${arrayBufferToBase64(prodImage.data.data)}`
     }
   }
 }

@@ -1,7 +1,5 @@
-import data from '../mock/products.json'
-
 export const state = () => ({
-  products: [...data],
+  products: [],
   productCart: [],
   userInfo: {
     isLoggedIn: false,
@@ -53,7 +51,17 @@ export const getters = {
   }
 }
 
+export const actions = {
+  async fetchAllProducts ({ commit }) {
+    const products = await this.$axios.$get('http://localhost:8082/api/products')
+    commit('setProducts', products)
+  }
+}
+
 export const mutations = {
+  setProducts: (state, products) => {
+    state.products = products
+  },
   addToCart: (state, id) => {
     state.products.forEach((el) => {
       if (id === el.id) {

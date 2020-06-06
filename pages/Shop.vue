@@ -4,7 +4,7 @@
       <p>Страница магазина</p>
     </v-row>
     <v-row class="justify-space-between">
-      <ShopItem v-for="product in products" :product="product" :key="product.id" />
+      <ShopItem v-for="product in products" :key="product._id" :product="product" />
     </v-row>
   </v-container>
 </template>
@@ -17,7 +17,9 @@ export default {
   components: {
     ShopItem
   },
-
+  async fetch ({ store }) {
+    await store.dispatch('fetchAllProducts')
+  },
   computed: {
     products () {
       return this.$store.state.products
