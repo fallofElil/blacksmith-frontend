@@ -30,6 +30,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/ymapPlugin.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -53,8 +54,7 @@ module.exports = {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {
-  },
+  axios: {},
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
