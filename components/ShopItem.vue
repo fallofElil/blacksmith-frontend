@@ -4,7 +4,7 @@
       <v-card
         :elevation="hover ? 24 : 6"
         class="product"
-        max-width="360"
+        :max-width="cardWidth"
       >
         <v-img
           :src="getBase64(product.prodImage)"
@@ -30,7 +30,7 @@ import { arrayBufferToBase64 } from '../helpers/img-base64'
 
 export default {
   name: 'ShopItem',
-  props: ['product'],
+  props: ['product', 'cardWidth'],
   methods: {
     addToCart (id) {
       this.$store.commit('addToCart', id)
