@@ -6,6 +6,7 @@
         <v-form>
           <v-text-field
             v-model="email"
+            type="email"
             :counter="50"
             name="email"
             label="Email"
@@ -14,7 +15,8 @@
             required
           />
           <v-text-field
-            v-model="email"
+            v-model="password"
+            type="password"
             :counter="50"
             name="password"
             label="Пароль"

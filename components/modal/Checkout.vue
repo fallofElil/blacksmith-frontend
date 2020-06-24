@@ -24,7 +24,7 @@
         <v-textarea
           outlined
           name="input-7-4"
-          label="Форма описания изделия"
+          label="Комменарий к заказу"
           class="comment"
         />
       </v-card-text>
