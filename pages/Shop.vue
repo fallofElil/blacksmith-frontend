@@ -4,7 +4,12 @@
       <p>Страница магазина</p>
     </v-row>
     <v-row class="justify-space-between">
-      <ShopItem v-for="product in products" :key="product._id" :product="product" />
+      <ShopItem
+        v-for="product in products"
+        :key="product._id"
+        :product="product"
+        card-width="360"
+      />
     </v-row>
   </v-container>
 </template>

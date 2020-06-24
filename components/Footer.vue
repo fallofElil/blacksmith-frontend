@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <p class="copyrigth">
-          <span>&copy; ИП Биденко С.С. {{ new Date().getFullYear() }}</span>
+          <span>&copy; ИП Биденко С.А. {{ new Date().getFullYear() }}</span>
         </p>
         <div class="socials">
           <v-btn class="btn-social" icon>

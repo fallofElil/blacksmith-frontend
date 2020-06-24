@@ -18,9 +18,15 @@
             </v-list-item-action>
           </v-list-item>
         </v-list>
-        <p class="total-price">
+        <p class="total-price mb-4">
           Итого:<span>{{ totalPrice }} &#8381;</span>
         </p>
+        <v-textarea
+          outlined
+          name="input-7-4"
+          label="Комменарий к заказу"
+          class="comment"
+        />
       </v-card-text>
       <v-card-actions>
         <v-btn color="primary" class="mx-auto">
@@ -75,5 +81,8 @@ export default {
 .total-price span {
   padding-left: 1rem;
   color: #fff;
+}
+.comment {
+  margin-bottom: -2rem;
 }
 </style>

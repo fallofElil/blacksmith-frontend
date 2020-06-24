@@ -13,6 +13,15 @@
             required
           />
           <v-text-field
+            v-model="phone"
+            type="phone"
+            :counter="12"
+            label="Email"
+            prepend-icon="mdi-phone"
+            class="mb-4"
+            required
+          />
+          <v-text-field
             v-model="email"
             type="email"
             :counter="50"
@@ -60,6 +69,7 @@ export default {
   name: 'CustomOrder',
   data: () => ({
     name: '',
+    phone: '+7',
     email: '',
     select: '',
     materials: [
